@@ -1,0 +1,26 @@
+img{
+    height: 500px;
+    width: 500px;
+}
+body{
+    background-color: blue;
+}
+.main{
+display:flex
+}
+.submain{
+    padding: 30px;
+    margin: 50px;
+    box-sizing: border-box;
+    font-size: normal;
+    border-right: 0ch;
+
+}
+container{
+   background-color: blue; 
+   font-size: medium;
+   padding: 0cm;
+   width: max-content;
+   max-width: max-content;
+   position: relative;
+}
