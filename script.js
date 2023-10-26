@@ -19,6 +19,14 @@ images.appendChild(imagesDiv)
 const ingredients = [];
 console.log(ingredients);
 
+const ingredient = document.getElementById(ingredient);
+const item = document.createElement("ul");
+const recipe = document.getElementById(recipe)
+const showrecipe =document.getElementById
+
+
+
+
 
 
 
