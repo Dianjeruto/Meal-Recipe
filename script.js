@@ -17,12 +17,17 @@ images.appendChild(imagesDiv)
 })
 })
 const ingredients = [];
-console.log(ingredients);
+console.log(item.strCategoryThumb);
+console.log(item.strCategory)
+console.log()
 
 const ingredient = document.getElementById(ingredient);
 const item = document.createElement("ul");
 const recipe = document.getElementById(recipe)
 const showrecipe =document.getElementById
+showrecipe.addEventListener("click",
+
+)
 
 
 
