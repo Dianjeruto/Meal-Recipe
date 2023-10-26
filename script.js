@@ -18,7 +18,7 @@ images.appendChild(imagesDiv)
 })
 const ingredients = [];
 console.log(ingredients);
-strMealThumb
+
 
 
 
