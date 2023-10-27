@@ -4,7 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch("https//themealdb.com/api/json/v1/1/categories.php?f=a")
     .then(response => response.json())
     .then((data) => {
-        console.log(data);
+        console.log(item);
+    
+    const count=1;
+    const ingredients=[];
+    const ingredient="";
+    const measure ="";
+    if (i.startsWith("strIngredient") && myMeal[i]);
+
+
 const userInput =document.getElementById(user-inp)
         const results = data.categories;
         for (const item of results) {
