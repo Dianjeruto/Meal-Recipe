@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelector('.images');
     const searchBtn = document.getElementById("search-btn");
 
-    fetch("https//themealdb.com/api/json/v1/1/categories.php?f=a")
+    fetch('https://themealdb.com/api/json/v1/1/categories.php?f='+ userInp)
     .then(response => response.json())
     .then((data) => {
         console.log(item);
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             images.appendChild(imagesDiv);
         }
     });
-});
+
 
     const count=1;
     const ingredients=[];
@@ -27,12 +27,18 @@ ingredient=item[i];
 ingredients.push('${measure} ${ingredients}'
 );
 console.log(ingredients);
-result.innerHTML='<img src=${item.strCategoryThumb}>';
+result.innerHTML=`
+<img src=${item.strCategoryThumb}>
+<div class = "images">
+<h1>${item.strCategory}</h1>
+</div>
+`;
+const ingredientCon = document.getElementById("ingredient-con");
+const item=document.createElement("ul");
+const recipe=document.getElementById("recipe");
+const showRecipe =document.getElementById("showRecipe");
 
-
-
-
-
+});
 
 
 
