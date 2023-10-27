@@ -1,20 +1,21 @@
-document.addEventListener('DOMContentLoaded', () => {
+function search(){
+
     const images = document.querySelector('.images');
     const searchBtn = document.getElementById("search-btn");
 
+    
+    const userInp = document.getElementById("user-inp").value;
+
     fetch('https://themealdb.com/api/json/v1/1/categories.php?f='+ userInp)
+
     .then(response => response.json())
     .then((data) => {
-        console.log(item);
-        const userInput =document.getElementById(user-inp)
-        const results = data.categories;
-        for (const item of results) {
-            const imagesDiv = document.createElement('div');
-            imagesDiv.innerHTML = `
-                <img src='${item.strCategoryThumb}'>
-            `;
-            images.appendChild(imagesDiv);
-        }
+        const myMeal =data.meals[0];
+        console.log(myMeal);
+        console.log(myMeal.strMealThumb);
+        console.log(myMeal.strMeal);
+        console.log(myMeal.strArea);
+        console.log(myMeal.strInstructions);
     });
 
 
@@ -24,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const measure ="";
     if (i.startsWith("strIngredient") && myMeal[i]);
 ingredient=item[i];
+measure =myMeal[`strMeasure` + count];
+count  += 1;
 ingredients.push('${measure} ${ingredients}'
 );
 console.log(ingredients);
@@ -38,7 +41,7 @@ const item=document.createElement("ul");
 const recipe=document.getElementById("recipe");
 const showRecipe =document.getElementById("showRecipe");
 
-});
-
+};
+  
 
 
