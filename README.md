@@ -1,6 +1,7 @@
 # Meal-Recipe
 It's a simple application that guides one on how to prepare different types of meals in an organized way.
 ## Technologies used
+This application has been built with the following;
 ```
  git v 2.34.1
  Visual Studio Code 
@@ -15,3 +16,5 @@ git clone git@github.com:Dianjeruto/Meal-Recipe.git
 ```
 2. Open the project in the browser or install live server extension in your VsCode.
 
+## Author & License
+Dian Jeruto & [MIT LICENSE](LICENSE) 
