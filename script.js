@@ -2,6 +2,7 @@ function search (){
 let results = document.getElementById("results")
 
 let user_input = document.getElementById("user_input").value;
+// API URL from mealdb recipe 
 let url = 'https://themealdb.com/api/json/v1/1/search.php?s='
 
 //the url is just for searching and is not useful input
