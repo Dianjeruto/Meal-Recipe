@@ -1,47 +1,41 @@
-function search(){
+function search (){
+    let results = document.getElementById("results")
 
-    const images = document.querySelector('.images');
-    const searchBtn = document.getElementById("search-btn");
+let user_input = document.getElementById("user_input").value;
+let url = 'https://themealdb.com/api/json/v1/1/search.php?s='
 
-    
-    const userInp = document.getElementById("user-inp").value;
+//the url is just for searching and is not useful input
+//add url and user inpur to get reuslts
+fetch( url + user_input)
 
-    fetch('https://themealdb.com/api/json/v1/1/categories.php?f='+ userInp)
-
-    .then(response => response.json())
-    .then((data) => {
-        const myMeal =data.meals[0];
-        console.log(myMeal);
-        console.log(myMeal.strMealThumb);
-        console.log(myMeal.strMeal);
-        console.log(myMeal.strArea);
-        console.log(myMeal.strInstructions);
+.then(response =>response.json())
+.then((data) => {
+    //access data from the larger "data" array 
+    let myMeal =data.meals[0];
+    let ingredients =[];
+    // iterate to get all the ingredients for the meal
+    for (let ing in myMeal){
+        let ingredient ="";
+        if (ing.startsWith("strIngredient")&& myMeal[ing]){
+            ingredient =myMeal[ing];
+            ingredients.push(`${ingredient}`);
+        }
+    }
+    //insert new HTML adjacent to results div
+    results.insertAdjacentHTML('beforeend', 
+    `
+    <h2>${myMeal.strMeal}</h2>
+    <img src=${myMeal.strMealThumb}>
+    <h3>Ingredients:</h3>
+    <ul></ul>
+    <h3>Instructions:</h3>
+    <P>${myMeal.strInstructions}</p>
+    `)
+    //iterate over ingredients array to list them in the UL tag
+    let listingredients = document.querySelector('ul')
+    ingredients.forEach((ingredient) =>{
+        listingredients.insertAdjacentHTML('beforeend', `<li>${ingredient}</li>`)
     });
 
-
-    const count=1;
-    const ingredients=[];
-    const ingredient="";
-    const measure ="";
-    if (i.startsWith("strIngredient") && myMeal[i]);
-ingredient=item[i];
-measure =myMeal[`strMeasure` + count];
-count  += 1;
-ingredients.push('${measure} ${ingredients}'
-);
-console.log(ingredients);
-result.innerHTML=`
-<img src=${item.strCategoryThumb}>
-<div class = "images">
-<h1>${item.strCategory}</h1>
-</div>
-`;
-const ingredientCon = document.getElementById("ingredient-con");
-const item=document.createElement("ul");
-const recipe=document.getElementById("recipe");
-const showRecipe =document.getElementById("showRecipe");
-
-};
-  
-
-
+    })
+}

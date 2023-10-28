@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Recipe App</title>
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
+    
+    <h1>The Meal Recipe</h1>
+    <span>Meal: </span>
     <input
     placeholder="Type a meal name..."
-    id="user-inp">
-    <h1>The Meal Recipe</h1>
-    <div class = "images"></div>
-    <div class="search-images"></div>
-    <button onclick="search()"id="search-btn">search</button>
-   
+    id="user_input">
+    <button onclick="search()">search</button>
+    <div id = "results"></div>
+   <script src ="script.js"></script>
 
 </body>
 </html>
