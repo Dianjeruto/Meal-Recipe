@@ -1,11 +1,11 @@
 function search (){
-    let results = document.getElementById("results")
+let results = document.getElementById("results")
 
 let user_input = document.getElementById("user_input").value;
 let url = 'https://themealdb.com/api/json/v1/1/search.php?s='
 
 //the url is just for searching and is not useful input
-//add url and user inpur to get reuslts
+//add url and user input to get reuslts
 fetch( url + user_input)
 
 .then(response =>response.json())
